@@ -2,6 +2,8 @@
 
 A full-stack **MERN** task management application with JWT authentication. Users can register, log in, add tasks, view them, mark as completed, delete, and filter by status — all scoped per user.
 
+🔗 **Live Demo:** [https://taskmanagementapp-client.onrender.com](https://taskmanagementapp-client.onrender.com)
+
 ---
 
 ## Tech Stack
@@ -12,6 +14,7 @@ A full-stack **MERN** task management application with JWT authentication. Users
 | **Backend** | Node.js, Express 4, Mongoose 8 |
 | **Database** | MongoDB Atlas (free M0 cluster) |
 | **Auth** | JSON Web Tokens (jsonwebtoken), bcryptjs |
+| **Deployment** | Render (frontend + backend) |
 | **Dev Tools** | Nodemon, Vite HMR |
 
 ---
@@ -162,3 +165,4 @@ Open **http://localhost:5173** in your browser.
 - **Auto-logout on token expiry** — Axios interceptor detects 401 responses and clears the session automatically
 - **Clean architecture** — Controller → Service separation for maintainable backend code
 - **Responsive UI** — works on both mobile and desktop screens
+- **Deployed on Render** — both frontend and backend hosted with environment-based CORS

@@ -14,7 +14,22 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+    'https://taskmanagementapp-client.onrender.com',
+    'http://localhost:5173',
+    'http://localhost:5174',
+];
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (e.g. mobile apps, Postman)
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
+}));
 app.use(express.json());
 
 // Routes
