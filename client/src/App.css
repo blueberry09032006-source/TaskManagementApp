@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-bg: #0f0f13;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.07);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #e4e4e7;
+  --color-muted: #71717a;
+  --color-accent: #818cf8;
+  --color-accent-hover: #6366f1;
+  --color-accent-glow: rgba(129, 140, 248, 0.25);
+  --color-success: #34d399;
+  --color-success-glow: rgba(52, 211, 153, 0.25);
+  --color-danger: #f87171;
+  --color-danger-glow: rgba(248, 113, 113, 0.25);
+  --color-pending-bg: rgba(251, 191, 36, 0.12);
+  --color-pending-text: #fbbf24;
+  --color-completed-bg: rgba(52, 211, 153, 0.12);
+  --color-completed-text: #34d399;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Animations ────────────────────────────────────────── */
+@keyframes pulse-fade {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pulse-fade {
+  animation: pulse-fade 3s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out both;
+}
+
+.animate-spin-custom {
+  animation: spin 0.7s linear infinite;
+}
